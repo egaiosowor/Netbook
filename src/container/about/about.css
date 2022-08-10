@@ -1,0 +1,39 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 70px 40px;
+}
+
+.about__header .textBox{
+    text-align: left;
+    margin: 0 0 26px;
+}
+
+.about__header ul li{
+    list-style-image: url(../../assets/check-box.svg); 
+    list-style-position: inside;
+    font-size: var(--fs-500);
+    font-weight: 600;
+    color: #171648;
+}
+
+
+
+@media (min-width: 900px){
+    .about{
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 90px;
+    }
+    
+    .about__header{
+        margin-bottom: 0;
+        flex-basis: 40%;
+    }
+
+    .about__image{
+        flex-basis: 40%;
+    }
+}

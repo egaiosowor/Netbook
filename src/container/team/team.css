@@ -1,0 +1,16 @@
+.team{
+    padding: 40px;
+}
+
+.team__members{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.4fr));
+    gap: 25px;
+}
+
+@media (min-width: 900px){  
+    .team{
+        padding: 50px 140px;
+    }
+}

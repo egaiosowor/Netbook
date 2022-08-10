@@ -1,0 +1,16 @@
+.blog{
+    padding: 55px;
+}
+
+.blog__articles{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    gap: 30px;
+}
+
+@media (min-width: 900px){
+    .blog{
+        padding: 90px;
+    }
+}

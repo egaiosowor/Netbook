@@ -1,0 +1,22 @@
+.member{
+    padding: 20px 30px;
+    border: 2px solid rgba(243, 243, 243, 0.5);
+    border-radius: 14px;
+}
+
+.member:hover{
+    box-shadow: 0 34px 68px 0 rgba(116, 115, 128, 0.1);
+    transform: scale(1.02);
+}
+
+.member__info{
+    text-align: center;
+}
+
+.member__info h4{
+    color: #2F2C4A;
+}
+
+.member__info p{
+    color: var(--clr-body);
+}
