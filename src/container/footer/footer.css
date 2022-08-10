@@ -42,14 +42,13 @@
     font-size: var(--fs-300);
 }
 
-.footer__cta .form{
+.footer__cta form{
     display: flex;
     justify-content: space-between;
     outline: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 14px;
 }
 
-.footer__cta .form input[type=text]{
+.footer__cta form input[type=text]{
     padding: 0 0 0 15px;
     color: #fff;
     font-size: var(--fs-300);
@@ -63,6 +62,7 @@
     font-weight: 600;
     background: #fff;
     border: 0;
+    border-radius: 0;
     cursor: pointer;
 }
 

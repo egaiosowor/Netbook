@@ -78,10 +78,10 @@ const Footer = ()=>{
             <div className="footer__cta">
                 <h4>Subscribe To Our Newsletter</h4>
                 <p>Stay up to date with our newsletters, future updates and added deliverables.</p>
-                <div className="form">
+                <form>
                         <input type="text" placeholder="Email Address" />
                         <button className="btn">Subscribe</button>
-                </div>
+                </form>
             </div>
         </footer>
     )
