@@ -9,12 +9,13 @@
     background-color: rgba(229, 240, 253, 1);
 }
 
-.banner__header .textBox{
-    text-align: left;
+.banner__header{
+    display: grid;
 }
 
 .banner__header img{
     max-width: 300px;
+    margin: auto;
 }
 
 .banner__img{
@@ -33,6 +34,12 @@
     }
     
     .banner__header .textBox{
+        margin: 0;
+        text-align: left;
+    }
+
+    .banner__header img{
+        max-width: 300px;
         margin: 0;
     }
 

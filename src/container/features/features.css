@@ -6,7 +6,7 @@
 .features__container{
     display: grid;
     justify-content: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 0.4fr));
     gap: 30px;
 }
 
