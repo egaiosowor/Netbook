@@ -3,62 +3,55 @@ import React, {useState} from "react";
 import "./navbar.css";
 import {images} from "../../constants"
 
-// const toggleMenu = ()=>{
-//     const hamburgerBtn = document.querySelector(".hamburger");
-
-//     if(hamburgerBtn.classList.contains("is-toggled")){
-//         hamburgerBtn.classList.remove("is-toggled");
-//         document.body.style.overflow = "visible";
-//         document.querySelector(".nav__menu").style.opacity = "0";
-//     }else{
-//         hamburgerBtn.classList.add("is-toggled");
-//         document.body.style.overflow = "hidden";
-//         document.querySelector(".nav__menu").style.opacity = "1";
-//     }
-    
-// };
-
-const Menu = ()=>(
-    <>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Community</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Events</a></li>
-    </>
-);
 
 const Navbar = ()=>{
+    const [burgerClass, setBurgerClass] = useState("hamburger");
+    const [menuClass, setMenuClass] = useState("navbar__mobile-menu");
     const [toggleMenu, setToggleMenu] = useState(false);
 
+    // toggle burger menu change
+    const updateMenu = () => {
+        if(!toggleMenu) {
+            setBurgerClass("hamburger clicked");
+            setMenuClass("navbar__mobile-menu slide-right");
+            document.body.style.overflow = "hidden";
+        }
+        else {
+            setBurgerClass("hamburger");
+            setMenuClass("navbar__mobile-menu slide-left");
+            document.body.style.overflow = "visible";
+        }
+        setToggleMenu(!toggleMenu)  
+    }
+
     return(
-        <nav className="nav">
-            <div className="nav-left">
-                <img className="nav__logo" src={images.logo} alt="Netbook Logo" />
-                <ul className="nav__links">
-                    < Menu />
+        <nav className="navbar">
+            <div className="navbar-left">
+                <img className="navbar__logo" src={images.logo} alt="Netbook Logo" />
+                <ul className="navbar__links">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Community</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Events</a></li>
                 </ul>
             </div>
-            <div className="nav-right">
+            <div className="navbar-right">
                 <a href="" className="btn">Log in</a>
             </div>
 
-            {toggleMenu
-            ?  (<button className="hamburger is-toggled" onClick={()=> setToggleMenu(false)}>
-                    <span className="hamburger-top"></span>
-                    <span className="hamburger-mid"></span>
-                    <span className="hamburger-bottom"></span>
-                </button>)
-            :  (<button className="hamburger" onClick={()=> setToggleMenu(true)}>
-                    <span className="hamburger-top"></span>
-                    <span className="hamburger-mid"></span>
-                    <span className="hamburger-bottom"></span>
-                </button>)}
-            {toggleMenu && (
-            <div className="nav__menu">
-                < Menu />
-                <a href="" className="btn">Login</a>
-            </div>
-            )}
+            <button className={burgerClass} onClick={updateMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul className={menuClass}>
+                <li><a href="">Home</a></li>
+                <li><a href="">Community</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="" className="btn">Login</a></li>
+            </ul>
         </nav>
     )
 };
